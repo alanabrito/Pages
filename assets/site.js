@@ -58,10 +58,28 @@ document.querySelectorAll(".interactive-card, .app-card, .button, .gallery-item"
   });
 });
 
-const galleryRoot = document.querySelector("[data-gallery-root]");
-const galleryDataNode = document.getElementById("gallery-data");
+const lightboxNode = document.querySelector("[data-lightbox]");
+const lightboxBody = lightboxNode?.querySelector("[data-lightbox-body]");
+const lightboxClose = lightboxNode?.querySelector("[data-lightbox-close]");
 
-if (galleryRoot && galleryDataNode) {
+lightboxClose?.addEventListener("click", () => {
+  lightboxNode.hidden = true;
+  document.body.classList.remove("no-scroll");
+});
+
+lightboxNode?.addEventListener("click", (event) => {
+  if (event.target === lightboxNode) {
+    lightboxNode.hidden = true;
+    document.body.classList.remove("no-scroll");
+  }
+});
+
+document.querySelectorAll("[data-gallery-root]").forEach((galleryRoot) => {
+  const galleryDataNode = galleryRoot.querySelector(".gallery-data") || document.getElementById("gallery-data");
+  if (!galleryDataNode) {
+    return;
+  }
+
   const galleryKey = galleryRoot.dataset.galleryKey || "default";
   const savedItems = config.galleries[galleryKey];
 
@@ -70,11 +88,11 @@ if (galleryRoot && galleryDataNode) {
     filter: "all",
   };
 
-  const filtersNode = document.querySelector("[data-gallery-filters]");
-  const gridNode = document.querySelector("[data-gallery-grid]");
-  const lightboxNode = document.querySelector("[data-lightbox]");
-  const lightboxBody = lightboxNode?.querySelector("[data-lightbox-body]");
-  const lightboxClose = lightboxNode?.querySelector("[data-lightbox-close]");
+  const filtersNode = galleryRoot.querySelector("[data-gallery-filters]");
+  const gridNode = galleryRoot.querySelector("[data-gallery-grid]");
+  if (!gridNode) {
+    return;
+  }
 
   const renderGallery = () => {
     const filteredItems = galleryState.filter === "all"
@@ -134,20 +152,8 @@ if (galleryRoot && galleryDataNode) {
     });
   }
 
-  lightboxClose?.addEventListener("click", () => {
-    lightboxNode.hidden = true;
-    document.body.classList.remove("no-scroll");
-  });
-
-  lightboxNode?.addEventListener("click", (event) => {
-    if (event.target === lightboxNode) {
-      lightboxNode.hidden = true;
-      document.body.classList.remove("no-scroll");
-    }
-  });
-
   renderGallery();
-}
+});
 
 const adminForm = document.querySelector("[data-admin-form]");
 if (adminForm) {

@@ -186,6 +186,12 @@ main,
   transform: translateY(-1px);
 }
 
+.topnav a[aria-current="page"] {
+  color: var(--text);
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
 main {
   padding: 0.5rem 0 4.5rem;
 }
@@ -224,6 +230,11 @@ main {
 
 .hero-quote {
   font-size: clamp(2.35rem, 5vw, 4.2rem);
+}
+
+.hero-handle {
+  color: var(--accent);
+  font-style: italic;
 }
 
 .hero-copy .lede,
@@ -720,6 +731,7 @@ main {
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 0.6rem;
   padding-bottom: 0.4rem;
 }

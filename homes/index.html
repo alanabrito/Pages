@@ -13,33 +13,111 @@
   <div class="page-shell">
     <header class="topbar">
       <a class="brand" href="../index.html"><span class="brand-icon" aria-hidden="true"><span class="brand-icon-a"></span><span class="brand-icon-b"></span></span><span class="brand-wordmark">alanabas</span></a>
-      <nav class="topnav"><a href="../work/index.html">Work</a><a href="../passions/index.html">Passions</a><a href="../homes/index.html">Homes</a><a href="../side-projects/index.html">Side Projects</a><a href="../community/index.html">Community</a></nav>
+      <nav class="topnav"><a href="../work/index.html">Work</a><a href="../passions/index.html">Passions</a><a href="../homes/index.html" aria-current="page">Homes</a><a href="../side-projects/index.html">Side Projects</a><a href="../community/index.html">Community</a></nav>
     </header>
-    <nav class="subnav"><a href="brazil.html">Brazil</a><a href="france.html">France</a><a href="us.html">U.S.</a></nav>
+    <nav class="subnav"><a href="#brazil">Brazil</a><a href="#france">France</a><a href="#us">U.S.</a></nav>
     <main>
       <section class="detail-hero reveal" data-section-key="homes.hero">
         <div>
-          <p class="eyebrow">Homes</p>
           <h1>Brazil, France, and the U.S. each carry a different emotional language.</h1>
-          <p class="lede">Each country now has its own page so you can build a visual essay around it: uploaded photos, quick tags, and a quieter story about what that place represents to you.</p>
+          <p class="lede">All three homes now live on one page. Each section can hold its own tags, uploaded photos, and visual memory fragments without sending people away to a separate route.</p>
         </div>
         <aside class="detail-panel reveal">
-          <p class="panel-kicker">Browse</p>
+          <p class="panel-kicker">Lens</p>
           <ul class="simple-list">
-            <li><a href="brazil.html">Brazil</a></li>
-            <li><a href="france.html">France</a></li>
-            <li><a href="us.html">United States</a></li>
+            <li>Brazil taught rhythm, warmth, and collective energy.</li>
+            <li>France sharpened craft, intention, and detail.</li>
+            <li>The U.S. expanded momentum, scale, and experimentation.</li>
           </ul>
         </aside>
       </section>
 
-      <section class="place-grid reveal" data-section-key="homes.places">
-        <a class="card place-card" href="brazil.html"><p class="card-label">Brazil</p><strong>Rhythm, warmth, and collective energy.</strong><p class="gallery-note">Gallery page with tags and uploads.</p></a>
-        <a class="card place-card" href="france.html"><p class="card-label">France</p><strong>Craft, intention, and taste in the details.</strong><p class="gallery-note">Gallery page with tags and uploads.</p></a>
-        <a class="card place-card" href="us.html"><p class="card-label">U.S.</p><strong>Momentum, ambition, and building in public.</strong><p class="gallery-note">Gallery page with tags and uploads.</p></a>
+      <section class="section reveal" id="brazil" data-section-key="homes.brazil.hero">
+        <div class="section-heading">
+          <p class="eyebrow">Brazil</p>
+          <h2>Rhythm, warmth, and collective energy.</h2>
+        </div>
+        <div class="split-section">
+          <article class="card">
+            <p class="lede" style="margin-top:0">Use this section to collect photos and short visual notes about rhythm, warmth, family, movement, and the collective energy that lives inside your work.</p>
+            <div class="tag-row"><span class="mini-chip">rhythm</span><span class="mini-chip">warmth</span><span class="mini-chip">community</span></div>
+          </article>
+          <article class="detail-panel">
+            <p class="panel-kicker">Upload path</p>
+            <p class="gallery-note">Add images to <code>assets/uploads/homes/brazil/</code> and edit them in the admin page.</p>
+          </article>
+        </div>
+        <div data-gallery-root data-gallery-key="homes-brazil" data-section-key="homes.brazil.gallery">
+          <div class="gallery-grid" data-gallery-grid></div>
+          <script class="gallery-data" type="application/json">
+            [
+              { "id": "brazil-1", "kind": "image", "title": "Brazil gallery image", "note": "Replace with your own uploaded image from assets/uploads/homes/brazil/.", "src": "../assets/placeholder-photo.svg", "tags": ["rhythm", "origin"] },
+              { "id": "brazil-2", "kind": "image", "title": "Another memory", "note": "Use as many images as you want in this gallery.", "src": "../assets/placeholder-photo.svg", "tags": ["family", "movement"] }
+            ]
+          </script>
+        </div>
+      </section>
+
+      <section class="section reveal" id="france" data-section-key="homes.france.hero">
+        <div class="section-heading">
+          <p class="eyebrow">France</p>
+          <h2>Craft, intention, and taste in the details.</h2>
+        </div>
+        <div class="split-section">
+          <article class="card">
+            <p class="lede" style="margin-top:0">This section is for the visual language of craft, elegance, texture, and intention. Add photos that capture detail, mood, and taste.</p>
+            <div class="tag-row"><span class="mini-chip">craft</span><span class="mini-chip">intention</span><span class="mini-chip">taste</span></div>
+          </article>
+          <article class="detail-panel">
+            <p class="panel-kicker">Upload path</p>
+            <p class="gallery-note">Add images to <code>assets/uploads/homes/france/</code> and edit them in the admin page.</p>
+          </article>
+        </div>
+        <div data-gallery-root data-gallery-key="homes-france" data-section-key="homes.france.gallery">
+          <div class="gallery-grid" data-gallery-grid></div>
+          <script class="gallery-data" type="application/json">
+            [
+              { "id": "france-1", "kind": "image", "title": "France gallery image", "note": "Replace with your own uploaded image from assets/uploads/homes/france/.", "src": "../assets/placeholder-photo.svg", "tags": ["craft", "architecture"] },
+              { "id": "france-2", "kind": "image", "title": "Texture and detail", "note": "Add tags that describe what this place means to you.", "src": "../assets/placeholder-photo.svg", "tags": ["detail", "restraint"] }
+            ]
+          </script>
+        </div>
+      </section>
+
+      <section class="section reveal" id="us" data-section-key="homes.us.hero">
+        <div class="section-heading">
+          <p class="eyebrow">United States</p>
+          <h2>Momentum, ambition, and building in public.</h2>
+        </div>
+        <div class="split-section">
+          <article class="card">
+            <p class="lede" style="margin-top:0">Use this section to hold images and tags about momentum, scale, experimentation, and the feeling of building in public.</p>
+            <div class="tag-row"><span class="mini-chip">momentum</span><span class="mini-chip">scale</span><span class="mini-chip">experimentation</span></div>
+          </article>
+          <article class="detail-panel">
+            <p class="panel-kicker">Upload path</p>
+            <p class="gallery-note">Add images to <code>assets/uploads/homes/us/</code> and edit them in the admin page.</p>
+          </article>
+        </div>
+        <div data-gallery-root data-gallery-key="homes-us" data-section-key="homes.us.gallery">
+          <div class="gallery-grid" data-gallery-grid></div>
+          <script class="gallery-data" type="application/json">
+            [
+              { "id": "us-1", "kind": "image", "title": "U.S. gallery image", "note": "Replace with your own uploaded image from assets/uploads/homes/us/.", "src": "../assets/placeholder-photo.svg", "tags": ["momentum", "work"] },
+              { "id": "us-2", "kind": "image", "title": "Another U.S. memory", "note": "Use tags to define what the place means to you.", "src": "../assets/placeholder-photo.svg", "tags": ["scale", "public build"] }
+            ]
+          </script>
+        </div>
       </section>
     </main>
     <footer class="footer"><p>Homes page</p><a href="../admin/index.html">Admin</a></footer>
+  </div>
+
+  <div class="lightbox" data-lightbox hidden>
+    <div class="lightbox-frame">
+      <button class="lightbox-close" data-lightbox-close type="button">×</button>
+      <div class="lightbox-body" data-lightbox-body></div>
+    </div>
   </div>
   <script src="../assets/site.js"></script>
 </body>
