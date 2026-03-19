@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Passions | Alana Brito</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;family=Lato:wght@400;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="../index.html"><span class="brand-icon" aria-hidden="true"><span class="brand-icon-a"></span><span class="brand-icon-b"></span></span><span class="brand-wordmark">alanabas</span></a>
+      <nav class="topnav"><a href="../work/index.html">Work</a><a href="../passions/index.html">Passions</a><a href="../homes/index.html">Homes</a><a href="../side-projects/index.html">Side Projects</a><a href="../community/index.html">Community</a></nav>
+    </header>
+    <nav class="subnav"><a href="#icons">Icons</a><a href="#gallery">Gallery</a></nav>
+    <main data-gallery-root data-gallery-key="passions">
+      <section class="detail-hero reveal" data-section-key="passions.hero">
+        <div>
+          <p class="eyebrow">Passions</p>
+          <h1>Music, making, water, and movement.</h1>
+          <p class="lede">This page is built to stay visually quiet while giving you room to grow a living gallery of photos, YouTube clips, and Instagram embeds. Your real passions photos are now wired in, and you can keep adding more by uploading into <code>assets/uploads/passions/</code> and updating the gallery data below.</p>
+        </div>
+        <aside class="detail-panel reveal">
+          <p class="panel-kicker">Gallery types</p>
+          <div class="chip-cloud">
+            <span>Uploaded photos</span>
+            <span>YouTube embeds</span>
+            <span>Instagram embeds</span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section reveal" id="icons" data-section-key="passions.icons">
+        <div class="section-heading">
+          <p class="eyebrow">Icons</p>
+          <h2>Minimal markers for the things that keep me expansive.</h2>
+        </div>
+        <div class="icon-grid">
+          <article class="card icon-card"><div class="icon-mark"><svg viewBox="0 0 24 24"><path d="M12 4v16"/><path d="M7 9h10"/><path d="M8 17c1.2-1 2.5-1.5 4-1.5S14.8 16 16 17"/></svg></div><strong>Maracatu</strong><span class="gallery-note">Rhythm and collective presence.</span></article>
+          <article class="card icon-card"><div class="icon-mark"><svg viewBox="0 0 24 24"><path d="M12 4c3 3 5 5.7 5 9a5 5 0 0 1-10 0c0-3.3 2-6 5-9Z"/></svg></div><strong>Pottery</strong><span class="gallery-note">Clay, patience, and form.</span></article>
+          <article class="card icon-card"><div class="icon-mark"><svg viewBox="0 0 24 24"><path d="M12 5v8"/><path d="M9 10h6"/><path d="M8 18h8"/></svg></div><strong>Candles</strong><span class="gallery-note">Warmth through making.</span></article>
+          <article class="card icon-card"><div class="icon-mark"><svg viewBox="0 0 24 24"><path d="M5 16c2.2-1.8 4.6-2.7 7-2.7S16.8 14.2 19 16"/><path d="M6 8c2 1.2 4 1.8 6 1.8S16 9.2 18 8"/></svg></div><strong>Watercolor</strong><span class="gallery-note">Flow, softness, surprise.</span></article>
+          <article class="card icon-card"><div class="icon-mark"><svg viewBox="0 0 24 24"><path d="M12 4v6"/><path d="M9 13c0 2 1.3 4 3 5 1.7-1 3-3 3-5"/></svg></div><strong>Scuba diving</strong><span class="gallery-note">Attention below the surface.</span></article>
+          <article class="card icon-card"><div class="icon-mark"><svg viewBox="0 0 24 24"><path d="M4 15c2.2-2 4.8-3 8-3s5.8 1 8 3"/><path d="M6 18c1.5-.8 3.5-1.2 6-1.2S16.5 17.2 18 18"/></svg></div><strong>Surf</strong><span class="gallery-note">Balance in motion.</span></article>
+          <article class="card icon-card"><div class="icon-mark"><svg viewBox="0 0 24 24"><path d="M4 14c3-2.5 5.7-3.8 8-3.8S17 11.5 20 14"/><path d="M8 18h8"/></svg></div><strong>Wakeboard</strong><span class="gallery-note">Speed, control, energy.</span></article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="gallery" data-section-key="passions.gallery">
+        <div class="section-heading">
+          <p class="eyebrow">Interactive Gallery</p>
+          <h2>Photos and videos with filters and lightbox view.</h2>
+        </div>
+        <div class="gallery-shell">
+          <div class="filter-row" data-gallery-filters>
+            <button class="is-active" type="button" data-filter="all">All</button>
+            <button type="button" data-filter="image">Photos</button>
+            <button type="button" data-filter="embed">Videos</button>
+          </div>
+          <div class="gallery-grid" data-gallery-grid></div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer"><p>Passions page</p><a href="../admin/index.html">Admin</a></footer>
+  </div>
+
+  <div class="lightbox" data-lightbox hidden>
+    <div class="lightbox-frame">
+      <button class="lightbox-close" data-lightbox-close type="button">×</button>
+      <div class="lightbox-body" data-lightbox-body></div>
+    </div>
+  </div>
+
+  <script id="gallery-data" type="application/json">
+    [
+      {
+        "id": "surf-1",
+        "kind": "image",
+        "title": "Surf",
+        "note": "Movement, presence, and learning to ride the energy that is already there.",
+        "src": "../assets/uploads/passions/img-6217.jpg",
+        "tags": ["surf", "water", "movement"]
+      },
+      {
+        "id": "surf-2",
+        "kind": "image",
+        "title": "Surf session",
+        "note": "Another frame from the ocean, where attention and joy meet.",
+        "src": "../assets/uploads/passions/img-6219.jpg",
+        "tags": ["surf", "ocean", "joy"]
+      },
+      {
+        "id": "scuba-1",
+        "kind": "image",
+        "title": "Scuba diving",
+        "note": "Underwater stillness and curiosity, with just enough adrenaline to stay awake to the moment.",
+        "src": "../assets/uploads/passions/img-6790.jpg",
+        "tags": ["scuba", "underwater", "curiosity"]
+      },
+      {
+        "id": "scuba-2",
+        "kind": "image",
+        "title": "Scuba encounter",
+        "note": "A close underwater encounter that turns adrenaline into awe.",
+        "src": "../assets/uploads/passions/img-6185.jpg",
+        "tags": ["scuba", "adventure", "awe"]
+      },
+      {
+        "id": "wakeboard-1",
+        "kind": "image",
+        "title": "Wakeboard",
+        "note": "A cleaner line, a faster pull, and that mix of control and play.",
+        "src": "../assets/uploads/passions/img-7489.jpg",
+        "tags": ["wakeboard", "speed", "balance"]
+      }
+    ]
+  </script>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

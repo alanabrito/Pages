@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin | Alana Brito</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;family=Lato:wght@400;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="../index.html"><span class="brand-icon" aria-hidden="true"><span class="brand-icon-a"></span><span class="brand-icon-b"></span></span><span class="brand-wordmark">alanabas</span></a>
+      <nav class="topnav"><a href="../work/index.html">Work</a><a href="../passions/index.html">Passions</a><a href="../homes/index.html">Homes</a><a href="../side-projects/index.html">Side Projects</a><a href="../community/index.html">Community</a></nav>
+    </header>
+    <nav class="subnav"><a href="#visibility">Visibility</a><a href="#passions">Passions</a><a href="#homes">Homes</a></nav>
+    <main>
+      <section class="detail-hero reveal">
+        <div>
+          <p class="eyebrow">Admin</p>
+          <h1>Edit galleries, tags, and visibility from one place.</h1>
+          <p class="lede">This admin page stores its changes in your browser. It is lightweight on purpose: edit the gallery JSON, save it locally, and refresh the corresponding page to see the new state.</p>
+        </div>
+        <aside class="detail-panel reveal">
+          <p class="panel-kicker">What you can control</p>
+          <ul class="simple-list">
+            <li>Show and hide major page sections.</li>
+            <li>Edit the passions gallery.</li>
+            <li>Edit Brazil, France, and U.S. galleries.</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="card reveal" id="visibility">
+        <div class="section-heading">
+          <p class="eyebrow">Visibility</p>
+          <h2>Turn sections on or off.</h2>
+        </div>
+        <form class="admin-form" data-admin-form data-gallery-name="passions">
+          <div class="checkbox-row">
+            <label><input type="checkbox" data-visibility-name="home.hero" checked>Home hero</label>
+            <label><input type="checkbox" data-visibility-name="home.areas" checked>Home areas</label>
+            <label><input type="checkbox" data-visibility-name="work.hero" checked>Work intro</label>
+            <label><input type="checkbox" data-visibility-name="work.products" checked>Work products</label>
+            <label><input type="checkbox" data-visibility-name="work.timeline" checked>Work timeline</label>
+            <label><input type="checkbox" data-visibility-name="passions.icons" checked>Passions icons</label>
+            <label><input type="checkbox" data-visibility-name="passions.gallery" checked>Passions gallery</label>
+            <label><input type="checkbox" data-visibility-name="homes.places" checked>Homes overview</label>
+            <label><input type="checkbox" data-visibility-name="community.projects" checked>Community cards</label>
+          </div>
+
+          <section id="passions" class="admin-shell">
+            <label for="admin-gallery-json">Passions gallery JSON</label>
+            <textarea id="admin-gallery-json"></textarea>
+          </section>
+
+          <section id="homes" class="admin-shell">
+            <label for="admin-brazil-json">Brazil gallery JSON</label>
+            <textarea id="admin-brazil-json" data-extra-gallery="homes-brazil"></textarea>
+
+            <label for="admin-france-json">France gallery JSON</label>
+            <textarea id="admin-france-json" data-extra-gallery="homes-france"></textarea>
+
+            <label for="admin-us-json">U.S. gallery JSON</label>
+            <textarea id="admin-us-json" data-extra-gallery="homes-us"></textarea>
+          </section>
+
+          <div class="hero-actions">
+            <button class="button button-primary" type="submit">Save changes</button>
+            <button class="button button-secondary" type="button" data-admin-reset>Reset local overrides</button>
+          </div>
+          <p class="admin-status" data-admin-status>Nothing saved yet in this browser.</p>
+        </form>
+      </section>
+    </main>
+    <footer class="footer"><p>Admin page</p><a href="../index.html">Back home</a></footer>
+  </div>
+
+  <script id="gallery-seed" type="application/json">
+    [
+      { "id": "surf-1", "kind": "image", "title": "Surf", "note": "Movement, presence, and learning to ride the energy that is already there.", "src": "../assets/uploads/passions/img-6217.jpg", "tags": ["surf", "water", "movement"] },
+      { "id": "surf-2", "kind": "image", "title": "Surf session", "note": "Another frame from the ocean, where attention and joy meet.", "src": "../assets/uploads/passions/img-6219.jpg", "tags": ["surf", "ocean", "joy"] },
+      { "id": "scuba-1", "kind": "image", "title": "Scuba diving", "note": "Underwater stillness and curiosity, with just enough adrenaline to stay awake to the moment.", "src": "../assets/uploads/passions/img-6790.jpg", "tags": ["scuba", "underwater", "curiosity"] },
+      { "id": "scuba-2", "kind": "image", "title": "Scuba encounter", "note": "A close underwater encounter that turns adrenaline into awe.", "src": "../assets/uploads/passions/img-6185.jpg", "tags": ["scuba", "adventure", "awe"] },
+      { "id": "wakeboard-1", "kind": "image", "title": "Wakeboard", "note": "A cleaner line, a faster pull, and that mix of control and play.", "src": "../assets/uploads/passions/img-7489.jpg", "tags": ["wakeboard", "speed", "balance"] }
+    ]
+  </script>
+  <script id="gallery-seed-brazil" type="application/json">
+    [
+      { "id": "brazil-1", "kind": "image", "title": "Brazil gallery image", "note": "Replace with your own uploaded image from assets/uploads/homes/brazil/.", "src": "../assets/placeholder-photo.svg", "tags": ["rhythm", "origin"] },
+      { "id": "brazil-2", "kind": "image", "title": "Another memory", "note": "Use as many images as you want in this gallery.", "src": "../assets/placeholder-photo.svg", "tags": ["family", "movement"] }
+    ]
+  </script>
+  <script id="gallery-seed-france" type="application/json">
+    [
+      { "id": "france-1", "kind": "image", "title": "France gallery image", "note": "Replace with your own uploaded image from assets/uploads/homes/france/.", "src": "../assets/placeholder-photo.svg", "tags": ["craft", "architecture"] },
+      { "id": "france-2", "kind": "image", "title": "Texture and detail", "note": "Add tags that describe what this place means to you.", "src": "../assets/placeholder-photo.svg", "tags": ["detail", "restraint"] }
+    ]
+  </script>
+  <script id="gallery-seed-us" type="application/json">
+    [
+      { "id": "us-1", "kind": "image", "title": "U.S. gallery image", "note": "Replace with your own uploaded image from assets/uploads/homes/us/.", "src": "../assets/placeholder-photo.svg", "tags": ["momentum", "work"] },
+      { "id": "us-2", "kind": "image", "title": "Another U.S. memory", "note": "Use tags to define what the place means to you.", "src": "../assets/placeholder-photo.svg", "tags": ["scale", "public build"] }
+    ]
+  </script>
+  <script src="../assets/site.js"></script>
+</body>
+</html>
