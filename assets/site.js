@@ -29,48 +29,76 @@ document.querySelectorAll("[data-section-key]").forEach((section) => {
   }
 });
 
-const revealItems = document.querySelectorAll(".reveal");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("is-visible");
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.14 });
+if (!prefersReducedMotion) {
+  const revealItems = document.querySelectorAll(".reveal");
 
-revealItems.forEach((item, index) => {
-  item.style.transitionDelay = `${Math.min(index * 55, 220)}ms`;
-  observer.observe(item);
-});
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.14 });
 
-document.querySelectorAll(".interactive-card, .app-card, .button, .gallery-item").forEach((item) => {
-  item.addEventListener("mousemove", (event) => {
-    const rect = item.getBoundingClientRect();
-    const x = ((event.clientX - rect.left) / rect.width - 0.5) * 4;
-    const y = ((event.clientY - rect.top) / rect.height - 0.5) * -4;
-    item.style.transform = `translateY(-3px) rotateX(${y}deg) rotateY(${x}deg)`;
+  revealItems.forEach((item, index) => {
+    item.style.transitionDelay = `${Math.min(index * 65, 260)}ms`;
+    observer.observe(item);
   });
 
-  item.addEventListener("mouseleave", () => {
-    item.style.transform = "";
+  window.addEventListener("pointermove", (event) => {
+    const x = `${(event.clientX / window.innerWidth) * 100}%`;
+    const y = `${(event.clientY / window.innerHeight) * 100}%`;
+    document.documentElement.style.setProperty("--pointer-x", x);
+    document.documentElement.style.setProperty("--pointer-y", y);
+  }, { passive: true });
+} else {
+  document.querySelectorAll(".reveal").forEach((item) => {
+    item.classList.add("is-visible");
   });
-});
+}
+
+if (window.matchMedia("(pointer: fine)").matches && !prefersReducedMotion) {
+  document.querySelectorAll(".button, .editorial-card, .runway-card, .journey-card, .app-card, .gallery-item, .product-card, .icon-card, .statement-panel, .credential-card").forEach((item) => {
+    item.addEventListener("mousemove", (event) => {
+      const rect = item.getBoundingClientRect();
+      const rotateX = ((event.clientY - rect.top) / rect.height - 0.5) * -5;
+      const rotateY = ((event.clientX - rect.left) / rect.width - 0.5) * 5;
+      item.style.transform = `translateY(-4px) perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+
+    item.addEventListener("mouseleave", () => {
+      item.style.transform = "";
+    });
+  });
+}
 
 const lightboxNode = document.querySelector("[data-lightbox]");
 const lightboxBody = lightboxNode?.querySelector("[data-lightbox-body]");
 const lightboxClose = lightboxNode?.querySelector("[data-lightbox-close]");
 
-lightboxClose?.addEventListener("click", () => {
+const closeLightbox = () => {
+  if (!lightboxNode) {
+    return;
+  }
+
   lightboxNode.hidden = true;
   document.body.classList.remove("no-scroll");
-});
+};
+
+lightboxClose?.addEventListener("click", closeLightbox);
 
 lightboxNode?.addEventListener("click", (event) => {
   if (event.target === lightboxNode) {
-    lightboxNode.hidden = true;
-    document.body.classList.remove("no-scroll");
+    closeLightbox();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeLightbox();
   }
 });
 
@@ -107,7 +135,7 @@ document.querySelectorAll("[data-gallery-root]").forEach((galleryRoot) => {
       const tags = (item.tags || []).map((tag) => `<span>${tag}</span>`).join("");
 
       return `
-        <article class="gallery-item card" data-kind="${item.kind}">
+        <article class="gallery-item" data-kind="${item.kind}">
           <button class="gallery-open" type="button" data-gallery-open="${item.id}">
             ${media}
             <span class="gallery-meta">
@@ -154,6 +182,71 @@ document.querySelectorAll("[data-gallery-root]").forEach((galleryRoot) => {
 
   renderGallery();
 });
+
+const projectShowcase = document.querySelector("[data-project-showcase]");
+if (projectShowcase) {
+  const rows = Array.from(projectShowcase.querySelectorAll("[data-project-row]"));
+  const previewNode = projectShowcase.querySelector("[data-project-preview]");
+  const previewType = projectShowcase.querySelector("[data-project-preview-type]");
+  const previewTitle = projectShowcase.querySelector("[data-project-preview-title]");
+  const previewDescription = projectShowcase.querySelector("[data-project-preview-description]");
+  const previewRole = projectShowcase.querySelector("[data-project-preview-role]");
+  const previewStatus = projectShowcase.querySelector("[data-project-preview-status]");
+  const previewMark = projectShowcase.querySelector("[data-project-preview-mark]");
+  const previewLink = projectShowcase.querySelector("[data-project-preview-link]");
+
+  const setActiveProject = (row) => {
+    rows.forEach((item) => {
+      item.classList.toggle("is-active", item === row);
+    });
+
+    if (previewNode) {
+      previewNode.dataset.theme = row.dataset.projectTheme || "blint";
+    }
+
+    if (previewType) {
+      previewType.textContent = row.dataset.previewType || "";
+    }
+
+    if (previewTitle) {
+      previewTitle.textContent = row.dataset.previewTitle || "";
+    }
+
+    if (previewDescription) {
+      previewDescription.textContent = row.dataset.previewDescription || "";
+    }
+
+    if (previewRole) {
+      previewRole.textContent = row.dataset.previewRole || "";
+    }
+
+    if (previewStatus) {
+      previewStatus.textContent = row.dataset.previewStatus || "";
+    }
+
+    if (previewMark) {
+      previewMark.textContent = row.dataset.previewMark || "";
+    }
+
+    if (previewLink) {
+      const link = row.dataset.previewLink || "";
+      previewLink.hidden = !link;
+      if (link) {
+        previewLink.href = link;
+      } else {
+        previewLink.removeAttribute("href");
+      }
+    }
+  };
+
+  rows.forEach((row) => {
+    row.addEventListener("mouseenter", () => setActiveProject(row));
+    row.addEventListener("focus", () => setActiveProject(row));
+    row.addEventListener("click", () => setActiveProject(row));
+  });
+
+  setActiveProject(rows.find((row) => row.classList.contains("is-active")) || rows[0]);
+}
 
 const adminForm = document.querySelector("[data-admin-form]");
 if (adminForm) {

@@ -6,82 +6,123 @@
   <title>Projects | Alana Brito</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;family=Lato:wght@400;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/site.css">
 </head>
 <body>
   <div class="page-shell">
     <header class="topbar">
-      <a class="brand" href="../index.html"><span class="brand-icon" aria-hidden="true"><span class="brand-icon-a"></span><span class="brand-icon-b"></span></span><span class="brand-wordmark">alanabas</span></a>
-      <nav class="topnav"><a href="../work/index.html">Work</a><a href="../passions/index.html">Passions</a><a href="../homes/index.html">Homes</a><a href="../side-projects/index.html" aria-current="page">Projects</a></nav>
+      <a class="brand" href="../index.html" aria-label="Alana Brito home">
+        <span class="brand-icon" aria-hidden="true"><span class="brand-icon-a"></span><span class="brand-icon-b"></span></span>
+        <span class="brand-wordmark">alanabas</span>
+      </a>
+      <nav class="topnav" aria-label="Primary">
+        <a href="../work/index.html">Work</a>
+        <a href="../passions/index.html">Passions</a>
+        <a href="../homes/index.html">Homes</a>
+        <a href="../side-projects/index.html" aria-current="page">Projects</a>
+      </nav>
     </header>
-    <nav class="subnav"><a href="#blind-apps">Blind apps</a><a href="#community-projects">Community projects</a></nav>
+
+    <nav class="subnav" aria-label="Project sections">
+      <a href="#blind-apps">Blind apps</a>
+      <a href="#community-projects">Community</a>
+    </nav>
+
     <main>
-      <section class="detail-hero reveal" data-section-key="sideprojects.hero">
-        <div>
-          <h1>Projects in motion.</h1>
-          <p class="lede">This is where I bring together the products, experiments, and community-centered initiatives I am shaping outside my core work. Some are app concepts, some are participation systems, and all of them reflect the kind of future I want to help build.</p>
-        </div>
-        <aside class="detail-panel reveal">
-          <p class="panel-kicker">Focus</p>
-          <div class="chip-cloud">
-            <span>Accessibility</span>
-            <span>Community</span>
-            <span>Participation</span>
+      <section class="page-intro reveal" data-section-key="sideprojects.hero">
+        <span class="hero-kicker">Independent work</span>
+        <h1 class="page-title">
+          <span class="page-title-small">Products and</span>
+          <span>concepts</span>
+        </h1>
+        <p class="hero-mini page-intro-copy">Orientation, speech, participation, and trust.</p>
+        <p class="page-meta">Accessibility / Community / Participation</p>
+      </section>
+
+      <section class="project-showcase reveal" id="blind-apps" data-section-key="sideprojects.collection" data-project-showcase>
+        <aside class="project-preview" data-project-preview data-theme="blint">
+          <div class="project-preview-surface">
+            <p class="card-label" data-project-preview-type>Accessibility app</p>
+            <h2 data-project-preview-title>blint</h2>
+            <p class="hero-mini" data-project-preview-description>Audio-first orientation for faster spatial confidence.</p>
+            <div class="project-preview-meta">
+              <span class="project-preview-chip" data-project-preview-role>Product concept</span>
+              <span class="project-preview-chip" data-project-preview-status>Current</span>
+            </div>
+            <a class="button button-secondary" data-project-preview-link href="../apps/blint/index.html">Open project</a>
           </div>
+          <div class="project-preview-mark" data-project-preview-mark>blint</div>
         </aside>
+
+        <div class="project-list" role="list" aria-label="Projects">
+          <button class="project-row is-active" type="button" data-project-row data-project-theme="blint" data-preview-type="Accessibility app" data-preview-title="blint" data-preview-description="Audio-first orientation for faster spatial confidence." data-preview-role="Product concept" data-preview-status="Current" data-preview-mark="blint" data-preview-link="../apps/blint/index.html">
+            <span class="project-row-title">
+              <strong>blint</strong>
+              <em>Quick orientation for faster spatial confidence.</em>
+            </span>
+            <span class="project-row-summary">Nearby context turned into short, useful cues.</span>
+            <span class="project-row-meta">Accessibility app</span>
+            <span class="project-row-year">Current</span>
+          </button>
+
+          <button class="project-row" type="button" data-project-row data-project-theme="caminhos" data-preview-type="Accessibility app" data-preview-title="Caminhos" data-preview-description="Calm route guidance built around trust, pace, and context." data-preview-role="Product concept" data-preview-status="Current" data-preview-mark="Caminhos" data-preview-link="../apps/caminhos/index.html">
+            <span class="project-row-title">
+              <strong>Caminhos</strong>
+              <em>Navigation with a softer tone.</em>
+            </span>
+            <span class="project-row-summary">Route guidance that respects pace and reduces overload.</span>
+            <span class="project-row-meta">Accessibility app</span>
+            <span class="project-row-year">Current</span>
+          </button>
+
+          <button class="project-row" type="button" data-project-row data-project-theme="message" data-preview-type="Accessibility app" data-preview-title="BlindMessaging" data-preview-description="Speech-led communication flows designed for speed and clarity." data-preview-role="Product concept" data-preview-status="Current" data-preview-mark="BlindMessaging" data-preview-link="../apps/blindmessaging/index.html">
+            <span class="project-row-title">
+              <strong>BlindMessaging</strong>
+              <em>Voice-first messaging with less friction.</em>
+            </span>
+            <span class="project-row-summary">Messaging built around listening, speech, and low-friction review.</span>
+            <span class="project-row-meta">Accessibility app</span>
+            <span class="project-row-year">Current</span>
+          </button>
+
+          <button class="project-row" type="button" data-project-row data-project-theme="juntos" data-preview-type="Community concept" data-preview-title="juntos" data-preview-description="A support system centered on belonging, care, and practical mutual help." data-preview-role="Community product" data-preview-status="In progress" data-preview-mark="juntos">
+            <span class="project-row-title">
+              <strong>juntos</strong>
+              <em>Mutual support with warmth.</em>
+            </span>
+            <span class="project-row-summary">Connection, opportunity, and support designed as infrastructure.</span>
+            <span class="project-row-meta">Community concept</span>
+            <span class="project-row-year">In progress</span>
+          </button>
+
+          <button class="project-row" type="button" data-project-row data-project-theme="partixu" data-preview-type="Participation concept" data-preview-title="partixu" data-preview-description="A concept for making participation feel intuitive, shared, and energizing." data-preview-role="Participation system" data-preview-status="In progress" data-preview-mark="partixu">
+            <span class="project-row-title">
+              <strong>partixu</strong>
+              <em>Participation as infrastructure.</em>
+            </span>
+            <span class="project-row-summary">Tools for contribution, coordination, and collective action.</span>
+            <span class="project-row-meta">Participation concept</span>
+            <span class="project-row-year">In progress</span>
+          </button>
+        </div>
       </section>
 
-      <section class="app-group reveal" id="blind-apps" data-section-key="sideprojects.collection">
-        <div class="section-heading">
-          <p class="eyebrow">Blind Apps</p>
-          <h2 class="app-group-title">Blind apps</h2>
-        </div>
-        <div class="grid grid-3">
-          <a class="card app-card app-card-blint" href="../apps/blint/index.html">
-            <div class="app-logo">
-              <span class="app-logo-mark"></span>
-              <span class="app-logo-text"><strong>blint</strong><span>Quick orientation</span></span>
-            </div>
-            <p>Audio-first orientation for faster spatial confidence.</p>
-          </a>
-          <a class="card app-card app-card-caminhos" href="../apps/caminhos/index.html">
-            <div class="app-logo">
-              <span class="app-logo-mark"></span>
-              <span class="app-logo-text"><strong>Caminhos</strong><span>Calm guidance</span></span>
-            </div>
-            <p>Gentler navigation designed around trust, pace, and route clarity.</p>
-          </a>
-          <a class="card app-card app-card-message" href="../apps/blindmessaging/index.html">
-            <div class="app-logo">
-              <span class="app-logo-mark"></span>
-              <span class="app-logo-text"><strong>BlindMessaging</strong><span>Voice-first messaging</span></span>
-            </div>
-            <p>Messaging built around listening, speech, and lower interaction friction.</p>
-          </a>
-        </div>
-      </section>
-
-      <section class="section reveal" id="community-projects" data-section-key="sideprojects.community">
-        <div class="section-heading">
-          <p class="eyebrow">Community</p>
-          <h2>Projects centered on belonging and participation.</h2>
-        </div>
-        <div class="grid grid-2">
-          <article class="card">
-            <p class="card-label">juntos</p>
-            <h3>Mutual support with warmth.</h3>
-            <p>A community initiative centered on helping people find support, opportunity, and belonging through human connection and care.</p>
-          </article>
-          <article class="card">
-            <p class="card-label">partixu</p>
-            <h3>Participation as infrastructure.</h3>
-            <p>A concept for helping people contribute, organize, and collaborate in ways that feel intuitive, energizing, and genuinely shared.</p>
-          </article>
-        </div>
+      <section class="statement-grid reveal" id="community-projects" data-section-key="sideprojects.community">
+        <article class="statement-panel is-dark">
+          <p class="card-label">Role</p>
+          <h2>I am a product manager shaping product direction, experience quality, and execution.</h2>
+        </article>
+        <article class="statement-panel">
+          <p class="card-label">Projects</p>
+          <p class="hero-mini">These concepts sit at the intersection of accessibility, community systems, and products that help people feel more capable in the world.</p>
+        </article>
       </section>
     </main>
-    <footer class="footer"><p>alanabas</p><a href="../index.html">Home</a></footer>
+
+    <footer class="footer">
+      <p>Projects</p>
+      <a href="../index.html">Home</a>
+    </footer>
   </div>
   <script src="../assets/site.js"></script>
 </body>
