@@ -1207,6 +1207,10 @@ li {
   background: linear-gradient(160deg, #5671a7, #31466f 60%, #182540 100%);
 }
 
+.project-preview[data-theme="btv"] .project-preview-surface {
+  background: linear-gradient(160deg, #c73b3b, #7a1f1f 60%, #431010 100%);
+}
+
 .project-preview .card-label,
 .project-preview .hero-mini {
   color: rgba(248, 244, 238, 0.76);
