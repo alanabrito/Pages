@@ -1,4 +1,5 @@
 .DS_Store
 **/.DS_Store
-.claude/
+.claude/*
+!.claude/launch.json
 Thumbs.db
