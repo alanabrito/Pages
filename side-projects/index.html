@@ -3,127 +3,182 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Projects | Alana Brito</title>
+  <title>Projects — Alana Brito</title>
+  <meta name="description" content="Independent projects by Alana Brito across accessibility, applied AI, community systems, and business — blint, Caminhos, BlindMessaging, juntos, and partixu.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/site.css">
 </head>
-<body>
-  <div class="page-shell">
-    <header class="topbar">
-      <a class="brand" href="../index.html" aria-label="Alana Brito home">
-        <span class="brand-icon" aria-hidden="true"><span class="brand-icon-a"></span><span class="brand-icon-b"></span></span>
-        <span class="brand-wordmark">alanabas</span>
+<body data-page="projects">
+
+  <header class="site-header">
+    <div class="shell site-header__inner">
+      <a class="brand" href="../index.html" aria-label="Alana Brito — home">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span>alana brito</span>
       </a>
-      <nav class="topnav" aria-label="Primary">
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="Toggle navigation">
+        <span aria-hidden="true"></span>
+      </button>
+      <nav class="site-nav" aria-label="Primary">
         <a href="../work/index.html">Work</a>
-        <a href="../passions/index.html">Passions</a>
-        <a href="../homes/index.html">Homes</a>
-        <a href="../side-projects/index.html" aria-current="page">Projects</a>
+        <a href="index.html" aria-current="page">Projects</a>
+        <a href="../beyond/index.html">Beyond</a>
+        <a class="nav-cta" href="mailto:alanabas@gmail.com">Get in touch</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <nav class="subnav" aria-label="Project sections">
-      <a href="#blind-apps">Blind apps</a>
-      <a href="#community-projects">Community</a>
-    </nav>
+  <main>
 
-    <main>
-      <section class="page-intro reveal" data-section-key="sideprojects.hero">
-        <span class="hero-kicker">Independent work</span>
-        <h1 class="page-title">
-          <span class="page-title-small">Products and</span>
-          <span>concepts</span>
-        </h1>
-        <p class="hero-mini page-intro-copy">Orientation, speech, participation, and trust.</p>
-        <p class="page-meta">Accessibility / Community / Participation</p>
-      </section>
+    <section class="page-head shell reveal" data-section-key="sideprojects.hero">
+      <a class="crumb mono" href="../index.html"><span aria-hidden="true">←</span> Index</a>
+      <h1>Projects I build <em>end to end</em>.</h1>
+      <p class="lede">
+        Deliberately wider than any one job: assistive technology, applied AI,
+        community and business systems, and tools I build for my own growth. Here I
+        hold every decision — research, scope, interface, copy, and the App Store
+        submission — instead of only the roadmap. It's how I stay a builder, and it
+        makes me a sharper product manager on Monday.
+      </p>
+      <ul class="pills mt-3">
+        <li>Assistive tech</li>
+        <li>Applied AI</li>
+        <li>Accessibility</li>
+        <li>Community systems</li>
+        <li>Business &amp; growth</li>
+      </ul>
+    </section>
 
-      <section class="project-showcase reveal" id="blind-apps" data-section-key="sideprojects.collection" data-project-showcase>
-        <aside class="project-preview" data-project-preview data-theme="blint">
-          <div class="project-preview-surface">
-            <p class="card-label" data-project-preview-type>Accessibility app</p>
-            <h2 data-project-preview-title>blint</h2>
-            <p class="hero-mini" data-project-preview-description>Watch your YouTube subscriptions, hands-free.</p>
-            <div class="project-preview-meta">
-              <span class="project-preview-chip" data-project-preview-role>Shipping app</span>
-              <span class="project-preview-chip" data-project-preview-status>Pre-launch</span>
-            </div>
-            <a class="button button-secondary" data-project-preview-link href="../apps/blint/index.html">Open project</a>
-          </div>
-          <div class="project-preview-mark" data-project-preview-mark>blint</div>
-        </aside>
+    <div class="shell">
+      <nav class="subnav" aria-label="Sections">
+        <a href="#apps">Accessibility apps</a>
+        <a href="#community">Community concepts</a>
+        <a href="#why">Why I build these</a>
+      </nav>
+    </div>
 
-        <div class="project-list" role="list" aria-label="Projects">
-          <button class="project-row is-active" type="button" data-project-row data-project-theme="blint" data-preview-type="Accessibility app" data-preview-title="blint" data-preview-description="Watch your YouTube subscriptions, hands-free." data-preview-role="Shipping app" data-preview-status="Pre-launch" data-preview-mark="blint" data-preview-link="../apps/blint/index.html">
-            <span class="project-row-title">
-              <strong>blint</strong>
-              <em>YouTube subscriptions, narrated and hands-free.</em>
-            </span>
-            <span class="project-row-summary">VoiceOver-first playback with spoken video details and hardware media controls.</span>
-            <span class="project-row-meta">Accessibility app</span>
-            <span class="project-row-year">Pre-launch</span>
-          </button>
-
-          <button class="project-row" type="button" data-project-row data-project-theme="caminhos" data-preview-type="Accessibility app" data-preview-title="Caminhos" data-preview-description="Calm route guidance built around trust, pace, and context." data-preview-role="Product concept" data-preview-status="Current" data-preview-mark="Caminhos" data-preview-link="../apps/caminhos/index.html">
-            <span class="project-row-title">
-              <strong>Caminhos</strong>
-              <em>Navigation with a softer tone.</em>
-            </span>
-            <span class="project-row-summary">Route guidance that respects pace and reduces overload.</span>
-            <span class="project-row-meta">Accessibility app</span>
-            <span class="project-row-year">Current</span>
-          </button>
-
-          <button class="project-row" type="button" data-project-row data-project-theme="message" data-preview-type="Accessibility app" data-preview-title="BlindMessaging" data-preview-description="Speech-led communication flows designed for speed and clarity." data-preview-role="Product concept" data-preview-status="Current" data-preview-mark="BlindMessaging" data-preview-link="../apps/blindmessaging/index.html">
-            <span class="project-row-title">
-              <strong>BlindMessaging</strong>
-              <em>Voice-first messaging with less friction.</em>
-            </span>
-            <span class="project-row-summary">Messaging built around listening, speech, and low-friction review.</span>
-            <span class="project-row-meta">Accessibility app</span>
-            <span class="project-row-year">Current</span>
-          </button>
-
-          <button class="project-row" type="button" data-project-row data-project-theme="juntos" data-preview-type="Community concept" data-preview-title="juntos" data-preview-description="A support system centered on belonging, care, and practical mutual help." data-preview-role="Community product" data-preview-status="In progress" data-preview-mark="juntos">
-            <span class="project-row-title">
-              <strong>juntos</strong>
-              <em>Mutual support with warmth.</em>
-            </span>
-            <span class="project-row-summary">Connection, opportunity, and support designed as infrastructure.</span>
-            <span class="project-row-meta">Community concept</span>
-            <span class="project-row-year">In progress</span>
-          </button>
-
-          <button class="project-row" type="button" data-project-row data-project-theme="partixu" data-preview-type="Participation concept" data-preview-title="partixu" data-preview-description="A concept for making participation feel intuitive, shared, and energizing." data-preview-role="Participation system" data-preview-status="In progress" data-preview-mark="partixu">
-            <span class="project-row-title">
-              <strong>partixu</strong>
-              <em>Participation as infrastructure.</em>
-            </span>
-            <span class="project-row-summary">Tools for contribution, coordination, and collective action.</span>
-            <span class="project-row-meta">Participation concept</span>
-            <span class="project-row-year">In progress</span>
-          </button>
+    <!-- ================= APPS ================= -->
+    <section class="section shell reveal" id="apps" data-section-key="sideprojects.apps">
+      <div class="section-head">
+        <p class="mono">01 — Accessibility</p>
+        <div>
+          <h2>Apps for people the default interface forgets.</h2>
+          <p class="lede">
+            Three products built around speech, listening, and confidence rather
+            than sight and precision.
+          </p>
         </div>
-      </section>
+      </div>
 
-      <section class="statement-grid reveal" id="community-projects" data-section-key="sideprojects.community">
-        <article class="statement-panel is-dark">
-          <p class="card-label">Role</p>
-          <h2>I am a product manager shaping product direction, experience quality, and execution.</h2>
-        </article>
-        <article class="statement-panel">
-          <p class="card-label">Projects</p>
-          <p class="hero-mini">These concepts sit at the intersection of accessibility, community systems, and products that help people feel more capable in the world.</p>
-        </article>
-      </section>
-    </main>
+      <div class="rows">
+        <a class="row-item" href="../apps/blint/index.html">
+          <span class="numeral">01</span>
+          <span class="row-item__title">blint</span>
+          <span class="row-item__desc">YouTube subscriptions narrated and hands-free — VoiceOver-first playback with spoken video details and hardware media controls.</span>
+          <span class="row-item__tag">iOS · Pre-launch</span>
+          <span class="row-item__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="row-item" href="../apps/caminhos/index.html">
+          <span class="numeral">02</span>
+          <span class="row-item__title">Caminhos</span>
+          <span class="row-item__desc">Route guidance that respects pace and reduces overload, with a tone built to grow confidence.</span>
+          <span class="row-item__tag">Concept · Current</span>
+          <span class="row-item__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="row-item" href="../apps/blindmessaging/index.html">
+          <span class="numeral">03</span>
+          <span class="row-item__title">BlindMessaging</span>
+          <span class="row-item__desc">Voice-first messaging built around listening, speech, and low-friction review.</span>
+          <span class="row-item__tag">Concept · Current</span>
+          <span class="row-item__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
 
-    <footer class="footer">
-      <p>Projects</p>
-      <a href="../index.html">Home</a>
-    </footer>
-  </div>
+    <!-- ================= COMMUNITY ================= -->
+    <section class="section shell reveal" id="community" data-section-key="sideprojects.community">
+      <div class="section-head">
+        <p class="mono">02 — Community</p>
+        <div>
+          <h2>Concepts about people, not features.</h2>
+          <p class="lede">
+            Two systems I keep coming back to, both about making collective effort
+            feel possible instead of exhausting — as much a business design problem
+            as a product one.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid--2">
+        <article class="card card--hover reveal">
+          <p class="mono mono--accent">Community product · In progress</p>
+          <h3>juntos</h3>
+          <p>
+            A support system centred on belonging, care, and practical mutual help —
+            connection, opportunity, and support treated as infrastructure rather
+            than as a feed.
+          </p>
+          <span class="card__foot">
+            <span class="mono">Belonging · Mutual aid</span>
+            <span class="mono">Concepting</span>
+          </span>
+        </article>
+
+        <article class="card card--hover reveal" data-delay="80">
+          <p class="mono mono--accent">Participation system · In progress</p>
+          <h3>partixu</h3>
+          <p>
+            Making participation feel intuitive, shared, and energising: tools for
+            contribution, coordination, and collective action that don't depend on
+            one exhausted organiser.
+          </p>
+          <span class="card__foot">
+            <span class="mono">Contribution · Coordination</span>
+            <span class="mono">Concepting</span>
+          </span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= WHY ================= -->
+    <section class="section shell reveal" id="why" data-section-key="sideprojects.why">
+      <div class="slab">
+        <p class="mono">03 — Why</p>
+        <p class="slab__quote mt-2">
+          Building for a screen reader changes what you consider finished.
+        </p>
+        <div class="grid grid--2 mt-3">
+          <p>
+            When the interface is audio, you cannot hide a weak information
+            hierarchy behind a nice layout. Every label, every order of operations,
+            every piece of state has to be genuinely correct — because it is being
+            read aloud, one item at a time, to someone who cannot skim ahead.
+          </p>
+          <p>
+            That discipline follows me into everything I spec at work — and it is
+            the main reason I keep shipping these, even when the day job is already
+            full.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell site-footer__inner">
+      <p class="mono">© <span data-year>2026</span> Alana Brito</p>
+      <nav aria-label="Footer">
+        <a class="mono" href="../index.html">Index</a>
+        <a class="mono" href="../work/index.html">Work</a>
+        <a class="mono" href="../beyond/index.html">Beyond</a>
+        <a class="mono" href="mailto:alanabas@gmail.com">Email</a>
+      </nav>
+    </div>
+  </footer>
+
   <script src="../assets/site.js"></script>
 </body>
 </html>
