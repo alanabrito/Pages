@@ -3,27 +3,91 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BlindMessaging Support</title>
+  <title>BlindMessaging Support — Alana Brito</title>
+  <meta name="description" content="Setup, features, and troubleshooting for BlindMessaging.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;family=Lato:wght@400;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body data-page="app-blindmessaging">
-  <div class="page-shell">
-    <header class="topbar"><a class="brand" href="index.html"><span class="brand-icon" aria-hidden="true"><span class="brand-icon-a"></span><span class="brand-icon-b"></span></span><span class="brand-wordmark">alanabas</span></a><nav class="topnav"><a href="../../work/index.html">Work</a><a href="../../passions/index.html">Passions</a><a href="../../homes/index.html">Homes</a><a href="../../side-projects/index.html">Projects</a></nav></header>
-    <main>
-      <section class="detail-hero reveal">
-        <div><p class="eyebrow">BlindMessaging Support</p><h1>Setup, features, and common fixes.</h1><p class="lede">A clear guide to getting started, shaping the messaging experience, and handling common issues quickly.</p></div>
-        <aside class="detail-panel reveal"><p class="panel-kicker">Setup</p><ol class="doc-list"><li>Install BlindMessaging and allow notifications, microphone, and contacts if required by the product scope.</li><li>Choose preferred compose mode: voice, text, or mixed.</li><li>Configure playback speed and message confirmation settings.</li><li>Start a conversation and test send/receive feedback.</li></ol></aside>
-      </section>
-      <section class="docs-grid reveal">
-        <article class="card"><p class="card-label">Key features</p><ul class="doc-list"><li>Voice compose with confirmation flow.</li><li>Rapid message playback and navigation.</li><li>Conversation shortcuts for important contacts.</li><li>Accessible message review actions.</li></ul></article>
-        <article class="card"><p class="card-label">Troubleshooting</p><ul class="doc-list"><li>If dictation is inaccurate, check microphone permissions and input language.</li><li>If notifications are missing, verify app notification settings.</li><li>If playback is too fast, adjust message review speed.</li><li>If contact sync fails, refresh permissions and reopen the app.</li></ul></article>
-      </section>
-    </main>
-    <footer class="footer"><p>BlindMessaging</p><a href="index.html">Overview</a></footer>
-  </div>
+
+  <header class="site-header">
+    <div class="shell site-header__inner">
+      <a class="brand" href="../../index.html" aria-label="Alana Brito — home">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span>alana brito</span>
+      </a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="Toggle navigation">
+        <span aria-hidden="true"></span>
+      </button>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../../work/index.html">Work</a>
+        <a href="../../side-projects/index.html" aria-current="page">Projects</a>
+        <a href="../../beyond/index.html">Beyond</a>
+        <a class="nav-cta" href="mailto:alanabas@gmail.com">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-head shell reveal">
+      <a class="crumb mono" href="index.html"><span aria-hidden="true">←</span> BlindMessaging</a>
+      <p class="mono mt-2">Support</p>
+      <h1>Setup, features, and troubleshooting.</h1>
+      <p class="lede">Everything below covers getting started with BlindMessaging and fixing the most common issues.</p>
+    </section>
+
+    <section class="section section--tight shell reveal">
+      <div class="grid grid--2">
+        <article class="card">
+          <p class="mono mono--accent">Contact</p>
+          <ul class="list-rule mt-1">
+            <li>Email <a href="mailto:alanabas@gmail.com">alanabas@gmail.com</a> for support, bug reports, or account questions.</li>
+            <li>Include your iPhone model, iOS version, and app version.</li>
+            <li>Describe the problem and whether VoiceOver was involved.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <p class="mono mono--accent">What to include</p>
+          <ul class="list-rule mt-1">
+            <li>Your iPhone model and iOS version.</li>
+            <li>The app version you are using.</li>
+            <li>A short description of the problem.</li>
+            <li>Whether VoiceOver, sign-in, or playback were involved.</li>
+            <li>Any error message shown in the app.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <p class="mono mono--accent">Troubleshooting</p>
+          <ul class="list-rule mt-1">
+            <li>If dictation does not start, confirm microphone and speech-recognition permissions are granted.</li>
+            <li>If playback is silent, check the device is not in silent mode and no other app is holding the audio session.</li>
+            <li>If messages do not sync, check your connection and reopen the app.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <p class="mono mono--accent">Response time</p>
+          <p>This is an independent project maintained outside of working hours. Expect a reply within a few days — accessibility-blocking bugs get priority.</p>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell site-footer__inner">
+      <p class="mono">© <span data-year>2026</span> Alana Brito</p>
+      <nav aria-label="Footer">
+        <a class="mono" href="../../index.html">Index</a>
+        <a class="mono" href="../../work/index.html">Work</a>
+        <a class="mono" href="../../side-projects/index.html">Projects</a>
+        <a class="mono" href="mailto:alanabas@gmail.com">Email</a>
+      </nav>
+    </div>
+  </footer>
+
   <script src="../../assets/site.js"></script>
 </body>
 </html>

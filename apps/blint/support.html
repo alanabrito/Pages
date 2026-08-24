@@ -3,27 +3,91 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>blint Support</title>
+  <title>blint Support — Alana Brito</title>
+  <meta name="description" content="Setup, features, and troubleshooting for blint.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;family=Lato:wght@400;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body data-page="app-blint">
-  <div class="page-shell">
-    <header class="topbar"><a class="brand" href="index.html"><span class="brand-icon" aria-hidden="true"><span class="brand-icon-a"></span><span class="brand-icon-b"></span></span><span class="brand-wordmark">alanabas</span></a><nav class="topnav"><a href="../../work/index.html">Work</a><a href="../../passions/index.html">Passions</a><a href="../../homes/index.html">Homes</a><a href="../../side-projects/index.html">Projects</a></nav></header>
-    <main>
-      <section class="detail-hero reveal">
-        <div><p class="eyebrow">blint Support</p><h1>Setup, features, and troubleshooting.</h1><p class="lede">Everything needed to get started with blint, tune the experience, and resolve the most common issues.</p></div>
-        <aside class="detail-panel reveal"><p class="panel-kicker">Setup</p><ol class="doc-list"><li>Install blint and allow location access while using the app.</li><li>Enable spoken feedback and optional haptics in onboarding.</li><li>Choose concise or detailed cue style.</li><li>Start a quick orientation session from the home screen.</li></ol></aside>
-      </section>
-      <section class="docs-grid reveal">
-        <article class="card"><p class="card-label">Key features</p><ul class="doc-list"><li>One-tap orientation mode.</li><li>Nearby context summaries.</li><li>Directional feedback tuned for speed.</li><li>Repeat-last-cue action for quick confirmation.</li></ul></article>
-        <article class="card"><p class="card-label">Troubleshooting</p><ul class="doc-list"><li>If cues are delayed, verify network and location permissions.</li><li>If audio is too verbose, switch to concise mode in settings.</li><li>If haptics are missing, confirm haptics are enabled on the device.</li><li>If location feels inaccurate, recalibrate by pausing and restarting a session.</li></ul></article>
-      </section>
-    </main>
-    <footer class="footer"><p>blint</p><a href="index.html">Overview</a></footer>
-  </div>
+
+  <header class="site-header">
+    <div class="shell site-header__inner">
+      <a class="brand" href="../../index.html" aria-label="Alana Brito — home">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span>alana brito</span>
+      </a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="Toggle navigation">
+        <span aria-hidden="true"></span>
+      </button>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../../work/index.html">Work</a>
+        <a href="../../side-projects/index.html" aria-current="page">Projects</a>
+        <a href="../../beyond/index.html">Beyond</a>
+        <a class="nav-cta" href="mailto:alanabas@gmail.com">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-head shell reveal">
+      <a class="crumb mono" href="index.html"><span aria-hidden="true">←</span> blint</a>
+      <p class="mono mt-2">Support</p>
+      <h1>Setup, features, and troubleshooting.</h1>
+      <p class="lede">Everything below covers getting started with blint and fixing the most common issues.</p>
+    </section>
+
+    <section class="section section--tight shell reveal">
+      <div class="grid grid--2">
+        <article class="card">
+          <p class="mono mono--accent">Contact</p>
+          <ul class="list-rule mt-1">
+            <li>Email <a href="mailto:alanabas@gmail.com">alanabas@gmail.com</a> for support, bug reports, or account questions.</li>
+            <li>Include your iPhone model, iOS version, and app version.</li>
+            <li>Describe the problem and whether VoiceOver was involved.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <p class="mono mono--accent">What to include</p>
+          <ul class="list-rule mt-1">
+            <li>Your iPhone model and iOS version.</li>
+            <li>The app version you are using.</li>
+            <li>A short description of the problem.</li>
+            <li>Whether VoiceOver, sign-in, or playback were involved.</li>
+            <li>Any error message shown in the app.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <p class="mono mono--accent">Troubleshooting</p>
+          <ul class="list-rule mt-1">
+            <li>If Google sign-in fails, confirm the app build is using the correct production OAuth client ID.</li>
+            <li>If videos do not load, check your internet connection and confirm the YouTube API key is configured for the build.</li>
+            <li>If narration or VoiceOver behaviour seems incorrect, fully close and reopen the app, then repeat the same transition.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <p class="mono mono--accent">Response time</p>
+          <p>This is an independent project maintained outside of working hours. Expect a reply within a few days — accessibility-blocking bugs get priority.</p>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell site-footer__inner">
+      <p class="mono">© <span data-year>2026</span> Alana Brito</p>
+      <nav aria-label="Footer">
+        <a class="mono" href="../../index.html">Index</a>
+        <a class="mono" href="../../work/index.html">Work</a>
+        <a class="mono" href="../../side-projects/index.html">Projects</a>
+        <a class="mono" href="mailto:alanabas@gmail.com">Email</a>
+      </nav>
+    </div>
+  </footer>
+
   <script src="../../assets/site.js"></script>
 </body>
 </html>

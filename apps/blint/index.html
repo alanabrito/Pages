@@ -3,44 +3,124 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>blint | Alana Brito</title>
+  <title>blint — Alana Brito</title>
+  <meta name="description" content="An iPhone app that turns YouTube into a channel-surfing experience built around VoiceOver — browse subscribed channels, hear what a video is before it play">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;family=Lato:wght@400;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../assets/site.css">
 </head>
 <body data-page="app-blint">
-  <div class="page-shell">
-    <header class="topbar">
-      <a class="brand" href="../../index.html"><span class="brand-icon" aria-hidden="true"><span class="brand-icon-a"></span><span class="brand-icon-b"></span></span><span class="brand-wordmark">alanabas</span></a>
-      <nav class="topnav"><a href="../../work/index.html">Work</a><a href="../../passions/index.html">Passions</a><a href="../../homes/index.html">Homes</a><a href="../../side-projects/index.html" aria-current="page">Projects</a></nav>
-    </header>
-    <main>
-      <section class="app-hero reveal">
-        <div class="app-hero-copy">
-          <div class="app-logo"><span class="app-logo-mark"></span> blint</div>
-          <h1>Find your next step.</h1>
-          <div class="cta-row">
-            <a class="button button-primary" href="support.html">Support</a>
-            <a class="button button-secondary" href="privacy.html">Privacy</a>
-          </div>
-          <div class="micro-nav">
-            <a href="license.html">License</a>
-            <a href="publishing.html">Publishing docs</a>
+
+  <header class="site-header">
+    <div class="shell site-header__inner">
+      <a class="brand" href="../../index.html" aria-label="Alana Brito — home">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span>alana brito</span>
+      </a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-label="Toggle navigation">
+        <span aria-hidden="true"></span>
+      </button>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../../work/index.html">Work</a>
+        <a href="../../side-projects/index.html" aria-current="page">Projects</a>
+        <a href="../../beyond/index.html">Beyond</a>
+        <a class="nav-cta" href="mailto:alanabas@gmail.com">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-head shell reveal">
+      <a class="crumb mono" href="../../side-projects/index.html"><span aria-hidden="true">←</span> Projects</a>
+      <div class="mt-2">
+        <span class="applogo"><span class="applogo__mark" aria-hidden="true"></span> blint</span>
+      </div>
+      <h1>Watch your subscriptions, hands-free.</h1>
+      <p class="lede">An iPhone app that turns YouTube into a channel-surfing experience built around VoiceOver — browse subscribed channels, hear what a video is before it plays, and move between them without hunting for small on-screen controls.</p>
+      <div class="btn-row mt-3">
+        <a class="btn btn--solid" href="support.html">Support</a>
+        <a class="btn btn--ghost" href="privacy.html">Privacy</a>
+        <a class="btn btn--ghost" href="license.html">License</a>
+      </div>
+    </section>
+
+    <section class="section section--tight shell reveal">
+      <div class="feature">
+        <div>
+          <p class="mono">The concept</p>
+          <p class="lede mt-1">Sign in once. After that, everything is built for ears and gestures rather than eyes and precise taps.</p>
+          <div class="feature__meta">
+            <span class="tag">VoiceOver-first</span>
+            <span class="tag">YouTube Data API</span>
+            <span class="tag">Narrated playback</span>
+            <span class="tag">iOS</span>
           </div>
         </div>
-        <div class="showcase reveal">
-          <div class="showcase-panel"><strong>Concept + focus</strong>blint is a concept for quick audio-first orientation. It turns nearby context into short, useful cues so movement feels more confident, less noisy, and more immediate.<div class="chip-cloud" style="margin-top:0.85rem"><span>audio-first</span><span>orientation</span><span>confidence</span></div></div>
-          <div class="showcase-panel"><strong>Core promise</strong>Deliver what matters now: where you are, what changed, and what to do next.</div>
+        <div class="beats">
+          <article class="beat">
+            <span class="numeral">01</span>
+            <div>
+              <h3>Core promise</h3>
+              <p>Every control is labelled, every transition is narrated, and playback is fully drivable from the lock screen or any connected Bluetooth accessory.</p>
+            </div>
+          </article>
+          <article class="beat">
+            <span class="numeral">02</span>
+            <div>
+              <h3>Who it's for</h3>
+              <p>Blind and low-vision users who want to watch content from channels they already follow, without depending on a sighted layout to find the next video.</p>
+            </div>
+          </article>
+          <article class="beat">
+            <span class="numeral">03</span>
+            <div>
+              <h3>Status</h3>
+              <p>Built and in pre-launch — working through App Store submission.</p>
+            </div>
+          </article>
         </div>
-      </section>
-      <section class="docs-grid reveal">
-        <article class="card"><p class="card-label">Key features</p><ul class="doc-list"><li>Rapid audio cues with concise phrasing.</li><li>Nearby landmark and direction awareness.</li><li>Simple haptic confirmations for key actions.</li><li>Low-friction interface for repeat use while moving.</li></ul></article>
-        <article class="card"><p class="card-label">Audience</p><p>Designed for blind and low-vision users who want fast spatial orientation without a heavy navigation workflow every time they move through a familiar or semi-familiar place.</p></article>
-      </section>
-    </main>
-    <footer class="footer"><p>blint</p><a href="../../side-projects/index.html">Projects</a></footer>
-  </div>
+      </div>
+    </section>
+
+    <section class="section shell reveal">
+      <div class="section-head">
+        <p class="mono">Key features</p>
+        <div><h2>What it does.</h2></div>
+      </div>
+      <div class="grid grid--2">
+        <article class="card">
+          <p class="mono mono--accent">Features</p>
+          <ul class="list-rule mt-1">
+            <li>Browse YouTube subscriptions and continue where you left off.</li>
+            <li>Spoken video details — title, channel, duration, publish date — before each video plays.</li>
+            <li>Play, pause, next, and previous from the lock screen or a Bluetooth accessory.</li>
+            <li>Fully VoiceOver-annotated controls, with swipe and hardware-key navigation throughout.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <p class="mono mono--accent">Design principle</p>
+          <h3>Narration is the interface.</h3>
+          <p>Most accessible apps add labels to a visual layout. blint inverts it: the audio sequence is the primary design artifact, and the screen is what happens to be showing while you listen.</p>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell site-footer__inner">
+      <p class="mono">© <span data-year>2026</span> Alana Brito</p>
+      <nav aria-label="Footer">
+        <a class="mono" href="../../index.html">Index</a>
+        <a class="mono" href="../../work/index.html">Work</a>
+        <a class="mono" href="../../side-projects/index.html">Projects</a>
+        <a class="mono" href="mailto:alanabas@gmail.com">Email</a>
+      </nav>
+    </div>
+  </footer>
+
   <script src="../../assets/site.js"></script>
 </body>
 </html>
