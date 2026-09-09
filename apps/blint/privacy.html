@@ -36,7 +36,7 @@
       <a class="crumb mono" href="index.html"><span aria-hidden="true">←</span> blint</a>
       <p class="mono mt-2">Privacy policy</p>
       <h1>blint accesses only what it needs to work.</h1>
-      <p class="lede">blint is an iOS app for iPhone and iPad that helps you browse subscribed YouTube channels and play videos with accessible, narrated controls. This page explains what the app accesses, how it is used, what it can change on your behalf, and which third-party services are involved. Last updated 2 September 2026.</p>
+      <p class="lede">blint is an iOS app for iPhone and iPad that helps you browse subscribed YouTube channels and play videos with accessible, narrated controls. This page explains what the app accesses, how it is used, what it can change on your behalf, and which third-party services are involved. Last updated 8 September 2026.</p>
     </section>
 
     <section class="section section--tight shell reveal">
@@ -67,6 +67,25 @@
             <li>Your Google sign-in is held in the iOS Keychain on your device. blint has no servers and no account system, so nothing is sent to us.</li>
             <li>No personal data is sold, and the app contains no advertising SDK.</li>
             <li>Data is shared only with Google/YouTube as required to provide the service.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <p class="mono mono--accent">How your data is protected</p>
+          <ul class="list-rule mt-1">
+            <li>Your Google sign-in token is stored encrypted in the iOS Keychain, protected by your device passcode or biometrics. It is marked "this device only", so it is never included in iCloud Keychain or in encrypted device backups.</li>
+            <li>All communication with Google and YouTube uses HTTPS with TLS encryption. blint makes no unencrypted network requests.</li>
+            <li>Watched videos and playback positions are held in the app's own storage on your device, protected by iOS file-level encryption while the device is locked.</li>
+            <li>blint has no servers and no database. There is no account on our side to breach, and no employee or third party who can access your data — the data stays on your device and with Google.</li>
+            <li>The app contains no analytics, advertising or tracking SDKs, so nothing about your viewing is transmitted to anyone.</li>
+            <li>Diagnostic logs stay on your device and deliberately record no video titles, no account details and no tokens.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <p class="mono mono--accent">Retaining and deleting your data</p>
+          <ul class="list-rule mt-1">
+            <li>Your sign-in token is kept only while you stay signed in. Signing out deletes it from the Keychain and revokes blint's access to your Google account.</li>
+            <li>Watched state and preferences are kept on your device until you delete them or remove the app.</li>
+            <li>Deleting the app removes everything blint has stored, permanently. Because there are no servers, there is nothing left elsewhere to delete.</li>
           </ul>
         </article>
         <article class="card">
