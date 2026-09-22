@@ -8,8 +8,8 @@
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* ---- 1. Content + section visibility (driven by /admin) ----
-     Strings, category lists and images are editable from the admin portal
-     (~/CodingProjects/admin, module M11) and fetched from there at runtime. The HTML here is
+     Every heading, paragraph, label and list on the page, and its images, are editable from
+     the admin portal (~/CodingProjects/admin, module M11) and fetched from there at runtime. The HTML here is
      always the fallback: if the fetch fails, is slow, or a field was never edited, whatever is
      hardcoded in the markup stands untouched. */
 
@@ -23,12 +23,21 @@
     });
   }
 
-  /* Headlines keep their italic accent: in an edited value, *word* becomes <em>word</em>.
-     Everything else is escaped first, so an edit can never inject markup. */
+  /* Formatted text keeps its inline markup through an edit: in a value, *word* is italics,
+     **word** is bold, and [text](link) is a link. Everything else is escaped first, so an
+     edit can never inject markup; a link is kept only for a web, mail or phone address or a
+     path on this site — never javascript: or any other scheme. */
+  var SAFE_HREF = /^(https?:|mailto:|tel:|[^:]*$)/i;
+
   function inlineHtml(text) {
     var escaped = String(text)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-    return escaped.replace(/\*([^*]+)\*/g, "<em>$1</em>");
+    return escaped
+      .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, function (match, label, href) {
+        return SAFE_HREF.test(href) ? '<a href="' + href + '">' + label + "</a>" : label;
+      })
+      .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+      .replace(/\*([^*]+)\*/g, "<em>$1</em>");
   }
 
   function applyStrings(content) {
@@ -36,7 +45,7 @@
       var field = content[el.dataset.contentKey];
       if (!field) return; // never edited — leave the hardcoded fallback in place
       if (field.type === "string") {
-        if (el.dataset.contentFormat === "inline") el.innerHTML = inlineHtml(field.value);
+        if (el.dataset.contentFormat === "inline" || el.dataset.contentFormat === "rich") el.innerHTML = inlineHtml(field.value);
         else el.textContent = field.value;
       } else if (field.type === "image" && el.tagName === "IMG") {
         el.src = field.value.url;
