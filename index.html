@@ -41,12 +41,12 @@
         <div>
           <p class="hero__status mono mono--ink">
             <span class="status-dot" aria-hidden="true"></span>
-            Product manager / systems thinker / builder
+            <span data-content-key="hero.status">Product manager / systems thinker / builder</span>
           </p>
           <h1 class="hero__title">
             Alana <em>Brito</em>
           </h1>
-          <p class="hero__lede">
+          <p class="hero__lede" data-content-key="hero.lede">
             Accessibility, product systems, movement, and cross-cultural
             storytelling. At Microsoft I drive product direction for PowerPoint —
             the fundamentals millions of people rely on daily, and the Copilot
@@ -64,7 +64,7 @@
 
         <figure class="portrait reveal" data-delay="120">
           <div class="portrait__frame">
-            <img src="assets/uploads/profile/alana-park.jpg" alt="Portrait of Alana Brito" width="800" height="1000">
+            <img src="assets/uploads/profile/alana-park.jpg" alt="Portrait of Alana Brito" width="800" height="1000" data-content-key="profile.image">
           </div>
           <figcaption class="portrait__caption">
             <span class="mono">Alana Brito</span>
@@ -184,7 +184,7 @@
         </div>
       </div>
 
-      <div class="rows">
+      <div class="rows" data-content-list="work.categories" data-content-list-mode="positional">
         <a class="row-item" href="work/index.html#powerpoint">
           <span class="numeral">01</span>
           <span class="row-item__title">PowerPoint</span>
@@ -293,7 +293,7 @@
         </div>
       </div>
 
-      <ul class="pills mt-0" style="margin-bottom:clamp(2rem,4vw,3rem)">
+      <ul class="pills mt-0" style="margin-bottom:clamp(2rem,4vw,3rem)" data-content-list="projects.categories">
         <li>Assistive tech</li>
         <li>Applied AI</li>
         <li>Accessibility</li>
@@ -397,7 +397,7 @@
       </div>
 
       <div class="mt-3" style="display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:center;justify-content:space-between">
-        <ul class="pills">
+        <ul class="pills" data-content-list="beyond.categories">
           <li>Surf</li>
           <li>Scuba</li>
           <li>Maracatu</li>
