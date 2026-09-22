@@ -7,20 +7,88 @@
 
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ---- 1. Section visibility (driven by /admin) ---- */
+  /* ---- 1. Content + section visibility (driven by /admin) ----
+     Strings, category lists and images are editable from the admin portal
+     (~/CodingProjects/admin, module M11) and fetched from there at runtime. The HTML here is
+     always the fallback: if the fetch fails, is slow, or a field was never edited, whatever is
+     hardcoded in the markup stands untouched. */
 
   var STORAGE_KEY = "alanabas-portal-config";
+  var CONTENT_API = "https://admin.alanabas.com/api/public/content/";
+  var PAGE_KEY = document.body.dataset.page;
 
-  try {
-    var config = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
-    var visibility = config.visibility || {};
+  function applyVisibility(visibility) {
     document.querySelectorAll("[data-section-key]").forEach(function (section) {
-      if (visibility[section.dataset.sectionKey] === false) {
-        section.hidden = true;
+      section.hidden = !!(visibility && visibility[section.dataset.sectionKey] === false);
+    });
+  }
+
+  function applyStrings(content) {
+    document.querySelectorAll("[data-content-key]").forEach(function (el) {
+      var field = content[el.dataset.contentKey];
+      if (!field) return; // never edited — leave the hardcoded fallback in place
+      if (field.type === "string") {
+        el.textContent = field.value;
+      } else if (field.type === "image" && el.tagName === "IMG") {
+        el.src = field.value.url;
+        if (field.value.alt) el.alt = field.value.alt;
       }
     });
+  }
+
+  function applyLists(content) {
+    document.querySelectorAll("[data-content-list]").forEach(function (container) {
+      var field = content[container.dataset.contentList];
+      if (!field || field.type !== "list" || !field.value.length) return;
+      if (container.dataset.contentListMode === "positional") {
+        /* Only the label and link are editable here — each row's own icon, description and
+           tag markup stays exactly as authored, patched in place by position. */
+        var rows = container.children;
+        field.value.forEach(function (item, i) {
+          var row = rows[i];
+          if (!row) return;
+          if (item.href) row.setAttribute("href", item.href);
+          var title = row.querySelector(".row-item__title");
+          if (title) title.textContent = item.label;
+        });
+      } else {
+        container.innerHTML = "";
+        field.value.forEach(function (item) {
+          var li = document.createElement("li");
+          li.textContent = item.label;
+          container.appendChild(li);
+        });
+      }
+    });
+  }
+
+  var cachedVisibility;
+  try {
+    cachedVisibility = (JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}")).visibility;
   } catch (e) {
-    /* storage unavailable — show everything */
+    /* storage unavailable */
+  }
+  applyVisibility(cachedVisibility);
+
+  if (PAGE_KEY && "fetch" in window) {
+    var controller = "AbortController" in window ? new AbortController() : null;
+    var timeout = controller && setTimeout(function () { controller.abort(); }, 4000);
+    fetch(CONTENT_API + PAGE_KEY, { signal: controller ? controller.signal : undefined })
+      .then(function (res) { return res.ok ? res.json() : null; })
+      .then(function (content) {
+        if (!content) return;
+        applyStrings(content);
+        applyLists(content);
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify({ visibility: cachedVisibility, content: content }));
+        } catch (e) {
+          /* private window — nothing to cache into, fetched content still applied above */
+        }
+      })
+      .catch(function () {
+        /* offline or the admin API is down — the hardcoded HTML already on the page stands */
+      })
+      .then(function () { if (timeout) clearTimeout(timeout); });
   }
 
   /* ---- 2. Sticky header hairline ---- */
