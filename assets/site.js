@@ -23,12 +23,21 @@
     });
   }
 
+  /* Headlines keep their italic accent: in an edited value, *word* becomes <em>word</em>.
+     Everything else is escaped first, so an edit can never inject markup. */
+  function inlineHtml(text) {
+    var escaped = String(text)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    return escaped.replace(/\*([^*]+)\*/g, "<em>$1</em>");
+  }
+
   function applyStrings(content) {
     document.querySelectorAll("[data-content-key]").forEach(function (el) {
       var field = content[el.dataset.contentKey];
       if (!field) return; // never edited — leave the hardcoded fallback in place
       if (field.type === "string") {
-        el.textContent = field.value;
+        if (el.dataset.contentFormat === "inline") el.innerHTML = inlineHtml(field.value);
+        else el.textContent = field.value;
       } else if (field.type === "image" && el.tagName === "IMG") {
         el.src = field.value.url;
         if (field.value.alt) el.alt = field.value.alt;
@@ -52,11 +61,17 @@
           if (title) title.textContent = item.label;
         });
       } else {
+        /* Each new item copies the tag and classes of the item it replaces (or the last one),
+           so a row of <span class="tag"> stays tags and <li> pills stay pills — including a
+           first item's accent class. */
+        var templates = Array.prototype.slice.call(container.children);
+        var fallback = templates[templates.length - 1];
         container.innerHTML = "";
-        field.value.forEach(function (item) {
-          var li = document.createElement("li");
-          li.textContent = item.label;
-          container.appendChild(li);
+        field.value.forEach(function (item, i) {
+          var template = templates[i] || fallback;
+          var el = template ? template.cloneNode(false) : document.createElement("li");
+          el.textContent = item.label;
+          container.appendChild(el);
         });
       }
     });
